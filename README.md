@@ -1,7 +1,9 @@
 # kvtracer
 
-Dummy YCSB client to record all the workload operations in a trace file, and convert 
+Dummy YCSB client to record all the workload operations in a trace file, and convert
 them to simple key-value GET/PUT operation to be used by some other benchmark tools.
+
+This repository was "forked" from a subdirectory of the [imembench](https://github.com/ryanphuang/imembench).
 
 ## Usage
 To compile the kvtracer module ,
@@ -36,9 +38,9 @@ bin/ycsb run kvtracer -P workloads/workloada -p "kvtracer.tracefile=tracea_run.t
 ```
 Replace the `kvtracer.tracefile` and `kvtracer.keymapfile` configuration if needed.
 The keymap file is needed because the YCSB operations are richer than simple key-value
-GET/PUT, e.g., delete table with a name will delete all keys/fields for that table. 
+GET/PUT, e.g., delete table with a name will delete all keys/fields for that table.
 We need to know what exactly are these keys.
 
-The final traces are in `tracea_load.txt` (for loading data) and `tracea_run.txt` 
+The final traces are in `tracea_load.txt` (for loading data) and `tracea_run.txt`
 (for operations). You can merge them into one trace.
 
