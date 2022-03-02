@@ -32,7 +32,7 @@ To compile the kvtracer module ,
 DATABASES = {
     ...
     "redis"        : "site.ycsb.db.RedisClient",
-+   "kvtracer"     : "com.yahoo.ycsb.db.KVTracerClient",
++   "kvtracer"     : "site.ycsb.db.KVTracerClient",
     ...
 }
 ```

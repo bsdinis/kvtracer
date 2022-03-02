@@ -1,4 +1,4 @@
-package com.yahoo.ycsb.db;
+package site.ycsb.db;
 
 import java.util.ArrayList;
 import java.util.HashMap;

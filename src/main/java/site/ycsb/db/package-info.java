@@ -1,4 +1,4 @@
 /**
  * The kvtracer Java binding.
  */
-package com.yahoo.ycsb.db;
+package site.ycsb.db;
