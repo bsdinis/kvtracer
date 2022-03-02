@@ -26,6 +26,17 @@ To compile the kvtracer module ,
   </modules>
 ```
 
+* Modify `bin/ycsb` in `YCSB` to include `kvtracer`, e.g.,
+
+```text
+DATABASES = {
+    ...
+    "redis"        : "site.ycsb.db.RedisClient",
++   "kvtracer"     : "com.yahoo.ycsb.db.KVTracerClient",
+    ...
+}
+```
+
 * Compile with `mvn -pl kvtracer -am clean package`. The jar file should be generated in
 the `target` directory in `kvtracer`.
 
