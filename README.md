@@ -11,20 +11,32 @@ To compile the kvtracer module ,
 * Modify the `pom.xml` file in the root directory of `YCSB` to include `kvtracer`
   (refer to https://github.com/stormspirit/YCSB), e.g.,
 
-  ```
-   <properties>
-      ...
-      <redis.version>2.0.0</redis.version>
-+     <kvtracer.version>0.1.0</kvtracer.version>
-      ...
-   </properties>
-   <modules>
-      ...
-      <module>redis</module>
-+     <module>kvtracer</module>
-      ...
-   </modules>
-  ```
+```xml
+  <properties>
+    ...
+    <redis.version>2.0.0</redis.version>
++   <kvtracer.version>0.1.0</kvtracer.version>
+    ...
+  </properties>
+  <modules>
+    ...
+    <module>redis</module>
++   <module>kvtracer</module>
+    ...
+  </modules>
+```
+
+* Modify `bin/ycsb` in `YCSB` to include `kvtracer`, e.g.,
+
+```text
+DATABASES = {
+    ...
+    "redis"        : "site.ycsb.db.RedisClient",
++   "kvtracer"     : "site.ycsb.db.KVTracerClient",
+    ...
+}
+```
+
 * Compile with `mvn -pl kvtracer -am clean package`. The jar file should be generated in
 the `target` directory in `kvtracer`.
 
